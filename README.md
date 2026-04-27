@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio website showcasing my projects, skills, and experience as a Full-Stack Developer.
 
-🔗 Live Website: [https://Swagata029.github.io/Portfolio/](https://swagata-talekar.netlify.app/)
+🔗 Live Website: [https://swagata-talekar.netlify.app/](https://swagata-talekar.netlify.app/)
 
 ---
 
