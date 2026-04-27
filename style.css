@@ -13,8 +13,8 @@ body {
 /* CURSOR GLOW */
 .cursor {
   position: fixed;
-  width: 200px;
-  height: 200px;
+  width: clamp(120px, 15vw, 200px);
+  height: clamp(120px, 15vw, 200px);
   border-radius: 40%;
   background: radial-gradient(circle, rgba(99, 102, 241, 0.25), transparent);
   pointer-events: none;
@@ -22,12 +22,18 @@ body {
   z-index: 0;
 }
 
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}
+
 /* BLOBS */
 .blob {
   position: fixed;
-  width: 400px;
-  height: 400px;
-  filter: blur(100px);
+  width: clamp(200px, 30vw, 400px);
+  height: clamp(200px, 30vw, 400px);
+  filter: blur(clamp(50px, 8vw, 100px));
   z-index: -1;
   animation: float 10s infinite ease-in-out;
 }
@@ -63,10 +69,11 @@ body {
 /* MAIN */
 .content {
   flex: 1;
-  padding: 80px;
+  padding: clamp(20px, 5vw, 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 .hero {
@@ -79,13 +86,14 @@ body {
 }
 
 .hero-img {
-  width: 200px;
+  width: clamp(90px, 15vw, 200px);
   border-radius: 50%;
   margin-bottom: 20px;
 }
 
 .hero-name {
-  font-size: 80px;
+  font-size: clamp(36px, 6vw, 80px);
+  line-height: 1.1;
 }
 
 .role {
@@ -100,12 +108,14 @@ body {
 /* BUTTONS */
 .btn,
 .btn-outline {
-  padding: 10px 15px;
+  padding: clamp(10px, 1.5vw, 14px) clamp(16px, 2vw, 24px);
   border-radius: 10px;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
   display: inline-block;
   margin-top: 10px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .btn {
@@ -139,11 +149,12 @@ body {
 .card {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(20px);
-  padding: 25px;
+  padding: clamp(16px, 2vw, 25px);
   border-radius: 20px;
   margin-bottom: 20px;
   transition: 0.3s;
   width: 100%;
+  max-width: 900px;                
 }
 
 .card h2 {
@@ -154,14 +165,6 @@ body {
   transform: translateY(-8px);
 }
 
-/* SKILLS */
-.skills span {
-  display: inline-block;
-  background: #e0e7ff;
-  padding: 8px 12px;
-  border-radius: 10px;
-}
-
 .skill {
   margin: 20px 0;
 }
@@ -169,8 +172,9 @@ body {
 .skill-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 6px;
-  font-size: 14px;
+  align-items: center;                 
+  margin-bottom: 8px;
+  font-size: clamp(13px, 1vw, 15px);
 }
 
 /* Background bar */
@@ -197,9 +201,8 @@ body {
 
 /* Heading */
 .skill-group h3 {
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   margin-bottom: 10px;
-  font-weight: bold;
   font-weight: 700;
 }
 
@@ -207,10 +210,10 @@ body {
 .skill-group span {
   display: inline-block;
   background: rgba(99, 102, 241, 0.1);
-  padding: 6px 12px;
+  padding: clamp(6px, 1vw, 10px) clamp(10px, 1.5vw, 14px);
   margin: 5px 10px 5px 0;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: clamp(12px, 1vw, 14px);
   transition: all 0.2s ease;
   cursor: default;
 }
@@ -234,19 +237,20 @@ body {
 .project-card {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(20px);
-  padding: 30px;
+  padding: clamp(16px, 2vw, 30px);
   border-radius: 15px;
   transition: 0.3s;
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 .project-card img {
-  width: 210px;
-  height: 120px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .project-card h3 {
@@ -254,8 +258,10 @@ body {
 }
 
 .project-card p {
-  font-size: 14px;
+  font-size: clamp(13px, 1.2vw, 15px);
   color: #475569;
+  line-height: 1.5;                    
+  margin-bottom: 10px;
 }
 
 /* LINK */
@@ -296,6 +302,16 @@ body {
     flex-direction: column;
   }
 
+  .blob1 {
+    top: 5%;
+    left: -20%;
+  }
+
+  .blob2 {
+    bottom: 5%;
+    right: -20%;
+  }
+
   .sidebar,
   .main {
     width: 100%;
@@ -318,8 +334,11 @@ hr {
 
 .socials {
   display: flex;
-  margin: 30px 0;
-  font-size: 14px;
+  flex-wrap: wrap;                
+  justify-content: center;        
+  gap: 15px;                      
+  margin: clamp(20px, 3vw, 30px) 0;
+  font-size: clamp(13px, 1vw, 14px);
   opacity: 0.9;
 }
 
@@ -342,9 +361,8 @@ hr {
 }
 
 .socials img {
-  width: 30px;
-  height: 30px;
-  margin-right: 5px;
+  width: clamp(20px, 2vw, 26px);  
+  height: auto;
 }
 
 .social-links {
