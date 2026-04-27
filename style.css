@@ -86,8 +86,8 @@ body {
 }
 
 .hero-img {
-  width: clamp(100px, 25vw, 160px);
-  height: clamp(100px, 25vw, 160px);
+  width: clamp(120px, 32vw, 180px);
+  height: clamp(120px, 32vw, 180px);
   border-radius: 50%;
   margin-bottom: 20px;
   object-fit: cover;
