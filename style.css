@@ -311,14 +311,17 @@ body {
   }
 
   .experience-card {
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
   .experience-card img {
-    margin-bottom: 10px;
+    margin: 0 auto 15px;   
+    display: block;
   }
+
 }
 
 hr {
