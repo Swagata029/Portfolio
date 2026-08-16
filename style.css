@@ -156,7 +156,7 @@ body {
   margin-bottom: 20px;
   transition: 0.3s;
   width: 100%;
-  max-width: 900px;                
+  max-width: 900px;
 }
 
 .card h2 {
@@ -174,7 +174,7 @@ body {
 .skill-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;                 
+  align-items: center;
   margin-bottom: 8px;
   font-size: clamp(13px, 1vw, 15px);
 }
@@ -245,7 +245,7 @@ body {
 .project-card p {
   font-size: clamp(13px, 1.2vw, 15px);
   color: #475569;
-  line-height: 1.5;                    
+  line-height: 1.5;
   margin-bottom: 10px;
 }
 
@@ -318,10 +318,9 @@ body {
   }
 
   .experience-card img {
-    margin: 0 auto 15px;   
+    margin: 0 auto 15px;
     display: block;
   }
-
 }
 
 hr {
@@ -332,9 +331,9 @@ hr {
 
 .socials {
   display: flex;
-  flex-wrap: wrap;                
-  justify-content: center;        
-  gap: 15px;                      
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
   margin: clamp(20px, 3vw, 30px) 0;
   font-size: clamp(13px, 1vw, 14px);
   opacity: 0.9;
@@ -359,7 +358,7 @@ hr {
 }
 
 .socials img {
-  width: clamp(20px, 2vw, 26px);  
+  width: clamp(20px, 2vw, 26px);
   height: auto;
 }
 
@@ -455,4 +454,75 @@ hr {
 
 .cert-card:hover {
   transform: translateY(-5px);
+}
+
+/* Image Modal */
+.image-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px;
+}
+
+#enlargedImage {
+    display: block;
+
+    width: auto !important;
+    height: auto !important;
+    max-width: 70vw !important;
+    max-height: 70vh !important;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #111;
+    color: white;
+
+    font-size: 32px;
+    cursor: pointer;
+    padding-bottom: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Make project images clickable */
+.project-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.02);
 }

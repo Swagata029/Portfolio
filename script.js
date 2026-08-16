@@ -65,3 +65,27 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+function openImage(image) {
+    const modal = document.getElementById("imageModal");
+    const enlargedImage = document.getElementById("enlargedImage");
+
+    enlargedImage.src = image.src;
+    enlargedImage.alt = image.alt;
+
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+
+function closeImage(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+
+    const modal = document.getElementById("imageModal");
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
